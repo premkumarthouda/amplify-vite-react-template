@@ -7,13 +7,23 @@ import { defineAuth } from '@aws-amplify/backend';
 export const auth = defineAuth({
   loginWith: {
     email: true,
+    phone: true,
   },
-    
+      
+  userAttributes: {
+    // specify a "birthdate" attribute
+    birthdate: {
+      mutable: true,
+      required: false,
+    }
+  },
   userAttributes: {
     preferredUsername: {
       mutable: true,
       required: false
     }
-  }
+  },
+    
+  groups: ["ADMINS", "EDITORS"],
     
 });
