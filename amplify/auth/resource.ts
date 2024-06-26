@@ -9,7 +9,11 @@ export const auth = defineAuth({
     email: true,
     phone: true,
   },
-      
+  
+  multifactor: {
+    mode: 'OPTIONAL',
+    totp: true
+  },    
   userAttributes: {
     // specify a "birthdate" attribute
     birthdate: {
